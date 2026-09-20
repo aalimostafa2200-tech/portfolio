@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ali Analytics | Data Analyst</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+
+    <style>
+        :root {
+            --bg: #06141f;
+            --card: #0d2233;
+            --accent: #38bdf8;
+            --accent2: #0ea5e9;
+            --text: #ffffff;
+            --muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+        }
+
+        p {
+            /* line-height: 1.8; */
+            color: var(--muted);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+
+
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(6, 20, 31, .85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .logo span:first-child {
+            color: #ffffff;
+        }
+
+        .logo span:last-child {
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            color: var(--text);
+            font-weight: 500;
+            transition: .3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: var(--accent);
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent);
+        }
+
+        .hero-text h3 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .hero-text .location {
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .status {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 8px 14px;
+            background: rgba(56, 189, 248, .1);
+            border: 1px solid rgba(56, 189, 248, .3);
+            border-radius: 30px;
+            font-size: 14px;
+            color: var(--accent);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: .3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #06141f;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: #06141f;
+        }
+
+        .hero-image img {
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 4px solid var(--accent);
+            padding: 6px;
+
+            box-shadow:
+                0 0 25px rgba(56, 189, 248, 0.35),
+                0 10px 30px rgba(0, 0, 0, 0.4);
+
+            animation: float 4s ease-in-out infinite;
+            transition: .4s ease;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+
+
+
+
+        /* SECTION TITLE */
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 70%;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+
+
+
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 18px;
+            transition: .4s;
+            border: 1px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(56, 189, 248, .3);
+            box-shadow: 0 0 25px rgba(56, 189, 248, .1);
+        }
+
+        .skill-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .skill-top i {
+            font-size: 34px;
+            color: var(--accent);
+        }
+
+        .skill-card h3 {
+            color: var(--accent);
+            font-size: 22px;
+        }
+
+        .skill-card ul {
+            padding-left: 18px;
+            color: var(--muted);
+            line-height: 2;
+        }
+
+
+
+
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: .4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            background: #081b29;
+            padding: 10px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .project-content ul {
+            padding-left: 18px;
+            line-height: 1.9;
+            color: var(--muted);
+        }
+
+
+
+
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid var(--accent);
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .timeline-item h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+
+
+
+
+        /* EDUCATION */
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .edu-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            transition: .4s;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .edu-card h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .edu-card span {
+            display: block;
+            margin: 10px 0;
+            color: var(--accent);
+        }
+
+
+
+
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: .3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .contact-card i {
+            font-size: 28px;
+            color: var(--accent);
+        }
+
+
+
+
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, .05);
+            color: var(--muted);
+        }
+
+
+
+
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px) {
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .status {
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <div class="logo">
+                <span>Ali</span> <span>Analytics</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- ABOUT -->
+
+    <section class="hero container" id="about">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1 style="color: var(--accent);">
+                    Ali Mustafa
+                </h1>
+
+                <h3>Junior Data Analyst</h3>
+
+                <p class="location">
+                    📍 Cairo, Egypt
+                <p style="font-size:13px; color:var(--accent); margin-bottom:10px;">
+                    Open to Work
+                </p>
+
+                <div class="status">
+                    <div class="badge">Onsite</div>
+                    <div class="badge">Remote</div>
+                    <div class="badge">Hybrid</div>
+                </div>
+                <p>
+                    Focused on turning raw data into clear business insights that support better decisions, improve
+                    performance, and create measurable business impact through detailed analysis and strategic thinking.
+                </p>
+
+                <br>
+
+                <p>
+                    Passionate Data Analyst with a business-focused mindset and growing interest in AI-powered
+                    automation and intelligent data solutions. Enjoy transforming raw data into meaningful insights that
+                    support smarter decisions and business growth. Experienced in ETL processes and workflow automation
+                    using n8n, with continuous learning in AI and modern analytics to build more efficient and impactful
+                    solutions.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects
+                    </a>
+
+                    <a href="Ali Mustafa CV...pdf" download class="btn btn-outline">
+                        Download CV
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+                <img src="imeg/Ali.jpeg">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- SKILLS -->
+
+    <section class="container" id="skills">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <i class="fa-solid fa-file-excel"></i>
+                    <h3>Excel</h3>
+                </div>
+
+                <ul>
+                    <li>Data Cleaning</li>
+                    <li>Power Query</li>
+                    <li>Power Pivot</li>
+                    <li>Pivot Tables</li>
+                    <li>KPI Dashboards</li>
+                    <li>Business Reporting</li>
+                </ul>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <h3>Power BI</h3>
+                </div>
+
+                <ul>
+                    <li>Interactive Dashboards</li>
+                    <li>DAX Calculations</li>
+                    <li>Data Modeling</li>
+                    <li>KPI Analysis</li>
+                    <li>Business Insights</li>
+                </ul>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Tableau</h3>
+                </div>
+
+                <ul>
+                    <li>Visual Analytics</li>
+                    <li>Storytelling Dashboards</li>
+                    <li>Data Visualization</li>
+                    <li>Reporting</li>
+                    <li>Data Modeling</li>
+                </ul>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>SQL</h3>
+                </div>
+
+                <ul>
+                    <li>Queries & Joins</li>
+                    <li>Data Extraction</li>
+                    <li>Filtering & Cleaning</li>
+                    <li>Database Analysis</li>
+                </ul>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <i class="fa-brands fa-python"></i>
+                    <h3>Python</h3>
+                </div>
+
+                <ul>
+                    <li>Pandas</li>
+                    <li>Data Analysis</li>
+                    <li>Visualization</li>
+                    <li>Web Scraping</li>
+                    <li>Automation</li>
+                </ul>
+
+            </div>
+
+            <div class="skill-card">
+
+                <div class="skill-top">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>AI for Data Analysis</h3>
+                </div>
+
+                <ul>
+                    <li>AI-Powered Data Insights</li>
+                    <li>Workflow Automation</li>
+                    <li>Prompt Engineering</li>
+                    <li>Data Analysis with AI Tools</li>
+                    <li>n8n Automation</li>
+                    <li>AI-Assisted Reporting</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- PROJECTS -->
+
+    <section class="container" id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+
+
+
+            <!-- PROJECT 1 -->
+
+            <a href="Strategy Business plan.pdf" target="_blank" class="project-link">
+
+                <div class="project-card">
+
+                    <img src="imeg/Screenshot 2026-04-14 214624.png">
+
+                    <div class="project-content">
+
+                        <h3>Sales Performance Analysis</h3>
+
+                        <ul>
+                            <li>Medium deal size contributed 61% of total revenue</li>
+                            <li>Identified top 3 VIP customers generating highest sales</li>
+                            <li>USA was the highest-performing market</li>
+                            <li>November achieved peak sales performance</li>
+                            <li>Classic Cars category generated highest revenue</li>
+                            <li>Improved retention & targeting strategies</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+
+
+            <!-- PROJECT 2 -->
+
+            <a href="Jop market.pdf" target="_blank" class="project-link">
+
+                <div class="project-card">
+
+                    <img src="imeg/jop.jpeg">
+
+                    <div class="project-content">
+
+                        <h3>Job Market Analysis</h3>
+
+                        <ul>
+                            <li>Average salary reached 4.23K</li>
+                            <li>Python identified as highest-paying skill</li>
+                            <li>SQL was the most demanded tool</li>
+                            <li>Technology sector had highest hiring demand</li>
+                            <li>Supported career roadmap decisions</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+
+
+            <!-- PROJECT 3 -->
+
+            <a href="Misuo Dashbord .pdf" target="_blank" class="project-link">
+
+                <div class="project-card">
+
+                    <img src="imeg/Screenshot 2026-03-14 145951.png">
+
+                    <div class="project-content">
+
+                        <h3>Misuo Sales Analysis</h3>
+
+                        <ul>
+                            <li>Analyzed orders, sales & delivery performance</li>
+                            <li>On-time delivery rate only 47%</li>
+                            <li>Homzmart was top-performing platform</li>
+                            <li>Beds were highest-selling products</li>
+                            <li>Cairo generated highest sales</li>
+                            <li>Identified logistics improvement opportunities</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+
+
+            <!-- PROJECT 4 -->
+
+            <a href="Marketing Analysis.pdf" target="_blank" class="project-link">
+
+                <div class="project-card">
+
+                    <img src="imeg/Screenshot 2026-02-15 142144.png">
+
+                    <div class="project-content">
+
+                        <h3>Marketing Performance Analysis</h3>
+
+                        <ul>
+                            <li>Measured campaign KPIs and channel performance</li>
+                            <li>Analyzed CPC, CPA, conversions & ROI</li>
+                            <li>Compared channel efficiency over time</li>
+                            <li>Identified highest-performing marketing channels</li>
+                            <li>Supported strategic budget optimization</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+
+
+            <!-- PROJECT 5 -->
+
+            <a href="Customer Speeding .pdf" target="_blank" class="project-link">
+
+                <div class="project-card">
+
+                    <img src="speding.jpeg">
+
+                    <div class="project-content">
+
+                        <h3>Customer Spending Analysis</h3>
+
+                        <ul>
+                            <li>Segmented customers by age groups</li>
+                            <li>Age 60+ generated highest spending (~600K)</li>
+                            <li>Compared online, branch & catalog purchases</li>
+                            <li>Identified highest-value countries</li>
+                            <li>Improved targeting & customer retention strategies</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <!-- PROJECT 6 -->
+
+            <a
+                href="https://www.linkedin.com/posts/ali-mustafa-610177255_%D8%AA%D9%85-%D8%AA%D9%86%D9%81%D9%8A%D8%B0-%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84-%D9%84%D8%A3%D8%AF%D8%A7%D8%A1-call-center-%D9%84%D8%B4%D8%B1%D9%83%D8%A9-ugcPost-7461464996309479424-k9OJ?utm_medium=ios_app&rcm=ACoAAD7ZxawBTOKJwfam3V3LrL1azLNAuixfTPA&utm_source=social_share_send&utm_campaign=whatsapp">
+
+                <div class="project-card">
+
+                    <img src="imeg/Screenshot 2026-05-16 141118.png">
+
+                    <div class="project-content">
+
+                        <h3>Call Center Performance Analysis – Salla Case Study</h3>
+
+                        <ul>
+                            <li>High call volume negatively impacts ASA and SLA</li>
+                            <li>Performance differences are influenced by workload, not just efficiency</li>
+                            <li>Using a combined Productivity Score provides a more fair evaluation</li>
+                            <li>Identified highest-value countries</li>
+                            <li>Improved targeting & customer retention strategies</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <!-- PROJECT 7 -->
+
+            <a href="https://drive.google.com/file/d/16yiSOzDfFcYX59OWejG5LzLLbRsZZEzR/view?usp=drivesdk">
+
+                <div class="project-card">
+
+                    <img src="imeg/unaizah.png">
+
+                    <div class="project-content">
+
+                        <h3>Unaizah Association for Humanitarian Services</h3>
+
+                        <ul>
+                            <li>Built an interactive Power BI dashboard analyzing 5K+ beneficiaries and 20K+ services
+                                across multiple programs and service categories</li>
+                            <li>Analyzed 4M in total donations and tracked an overall target achievement rate of 92.18%
+                            </li>
+                            <li>Analyzed beneficiary demographics, including an average beneficiary age of 14 years,
+                                with 3.11K males and 1.89K females</li>
+                            <li>Evaluated service performance using 84% attendance, 11% absence, and 5% excuse rates,
+                                with total service costs reaching 1.58M</li>
+                            <li>Analyzed 6 programs to identify service distribution, beneficiary volume, and program
+                                performance</li>
+                            <li>Developed interactive KPI dashboards to monitor beneficiaries, services, programs,
+                                donations, and performance trends</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            <!-- PROJECT 8 -->
+
+            <a href="Cottonil.pdf">
+
+                <div class="project-card">
+
+                    <img src="imeg/Screenshot 2026-09-16 200326.png">
+
+                    <div class="project-content">
+
+                        <h3>Cottonil Sales & Business Performance Analysis</h3>
+
+                        <ul>
+                            <li>Sales increased by 9.35% compared to the previous month, reaching EGP 2M</li>
+                            <li>May recorded the highest sales level during the analyzed period</li>
+                            <li>Men represented the largest customer segment, while Men’s Boxers were the best-selling
+                                product category</li>
+                            <li>Borel was the top-performing supplier, generating EGP 150K in sales with a 1.51% return
+                                rate</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- EXPERIENCE -->
+
+    <section class="container">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>Data Analyst Intern — Mazen Analytics</h3>
+
+                <p>2026</p>
+
+                <p>
+                    Worked on real-world datasets, dashboards, reporting, and business insights using modern analytics
+                    tools.
+                </p>
+
+            </div>
+
+
+
+
+
+            <div class="timeline-item">
+
+                <h3>Data Analytics Projects</h3>
+
+                <p>2026 — Present</p>
+
+                <p>
+                    Built multiple business-focused dashboards and analytical projects focused on improving
+                    decision-making and performance tracking.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- EDUCATION -->
+
+    <section class="container">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-grid">
+
+            <div class="edu-card">
+
+                <h3>Bachelor of Business Administration</h3>
+
+                <p>
+                    <strong>Modern Academy</strong>
+                </p>
+
+                <p>
+                    Major: Accounting
+                </p>
+
+                <span>
+                    2019 — 2023
+                </span>
+
+                <p>
+                    Built strong business, accounting, and analytical foundations supporting data-driven decision
+                    making.
+                </p>
+
+            </div>
+
+            <div class="edu-card">
+
+                <h3>Master of Business Administration (MBA)</h3>
+
+                <p>
+                    <strong>Arab Academy for Science, Technology & Maritime Transport</strong>
+                </p>
+
+                <p>
+                    Major: Business Administration
+                </p>
+
+                <span>
+                    2025 — Present
+                </span>
+
+                <p>
+                    Focused on business strategy, management, and advanced decision-making concepts integrated with
+                    analytics.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- CONTACT -->
+
+    <section class="container" id="contact">
+
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-grid">
+
+            <!-- PHONE -->
+            <a href="tel:+201148638928" style="text-decoration:none; color:inherit;">
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p style="color:#94a3b8;">
+                            +20 114 863 8928
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- EMAIL -->
+            <a href="mailto:Aalimostafa2200@gmail.com" style="text-decoration:none; color:inherit;">
+                <div class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p style="color:#94a3b8;">
+                            Aalimostafa2200@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- LINKEDIN -->
+            <a href="https://www.linkedin.com/in/ali-mustafa-610177255" target="_blank"
+                style="text-decoration:none; color:inherit;">
+                <div class="contact-card">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <p style="color:#94a3b8;">
+                            View Profile
+                        </p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        © 2026 Ali Analytics — All Rights Reserved
+    </footer>
+
+</body>
+
+</html>
